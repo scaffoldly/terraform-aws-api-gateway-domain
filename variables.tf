@@ -1,16 +1,12 @@
-variable "dns_provider" {
+variable "subdomain" {
   type        = string
-  description = "The DNS provider (Route53 currently only supported)"
+  description = "The subdomain"
 }
-variable "dns_domain_id" {
+variable "subdomain_suffix" {
   type        = string
-  description = "The Route53 domain ID"
+  description = "The suffix to append to the subdomain (can be an empty string for no suffix)"
 }
 variable "domain" {
   type        = string
-  description = "FQDN for the domain"
-}
-variable "certificate_arn" {
-  type        = string
-  description = "The certificate ARN provisioned for the domain"
+  description = "The domain (must have an associated Route53 Zone)"
 }
