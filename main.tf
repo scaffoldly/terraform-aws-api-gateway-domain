@@ -1,11 +1,5 @@
 locals {
   domain = var.subdomain_suffix != "" ? "${var.subdomain}-${var.subdomain_suffix}.${var.domain}" : "${var.subdomain}.${var.domain}"
-  platform_domains = merge(
-    var.platform_domains,
-    {
-      api_gateway_domain = local.domain
-    }
-  )
 }
 
 data "aws_route53_zone" "zone" {
@@ -41,7 +35,7 @@ resource "aws_route53_record" "verification_record" {
   type    = each.value.type
   zone_id = data.aws_route53_zone.zone.zone_id
 
-  # allow_overwrite = true # Dirty hack to allow wildcard certs to not collide
+  allow_overwrite = true # Dirty hack to allow wildcard certs to not collide
 
   provider = aws.dns
 }
