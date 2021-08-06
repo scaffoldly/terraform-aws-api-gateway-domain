@@ -1,10 +1,14 @@
+variable "stage" {
+  type        = string
+  description = "The stage"
+}
 variable "subdomain" {
   type        = string
   description = "The subdomain"
 }
 variable "subdomain_suffix" {
-  type        = string
-  description = "The suffix to append to the subdomain (can be an empty string for no suffix)"
+  type        = optional(string)
+  description = "The (optional) suffix to append to the subdomain"
 }
 variable "domain" {
   type        = string

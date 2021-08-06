@@ -1,5 +1,6 @@
 locals {
-  domain = var.subdomain_suffix != "" ? "${var.subdomain}-${var.subdomain_suffix}.${var.domain}" : "${var.subdomain}.${var.domain}"
+  subdomain_suffix = var.subdomain_suffix != null ? var.subdomain_suffix : ""
+  domain           = local.subdomain_suffix != "" ? "${var.subdomain}-${local.subdomain_suffix}.${var.domain}" : "${var.subdomain}.${var.domain}"
 }
 
 data "aws_route53_zone" "zone" {
