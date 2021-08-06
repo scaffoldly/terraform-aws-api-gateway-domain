@@ -48,7 +48,8 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_domain"></a> [domain](#output\_domain) | The complete FQDN for API Gateway |
+| <a name="output_api_gateway_domain"></a> [api\_gateway\_domain](#output\_api\_gateway\_domain) | The complete FQDN for API Gateway |
+| <a name="output_domain"></a> [domain](#output\_domain) | Re-output of var.domain |
 | <a name="output_stage"></a> [stage](#output\_stage) | Re-output of var.stage |
 | <a name="output_subdomain"></a> [subdomain](#output\_subdomain) | Re-output of var.subdomain |
 | <a name="output_subdomain_suffix"></a> [subdomain\_suffix](#output\_subdomain\_suffix) | Re-output of var.subdomain\_suffix |
