@@ -1,5 +1,11 @@
 locals {
   domain = var.subdomain_suffix != "" ? "${var.subdomain}-${var.subdomain_suffix}.${var.domain}" : "${var.subdomain}.${var.domain}"
+  platform_domains = merge(
+    var.platform_domains,
+    {
+      api_gateway_domain = local.domain
+    }
+  )
 }
 
 data "aws_route53_zone" "zone" {

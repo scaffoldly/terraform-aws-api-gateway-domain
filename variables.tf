@@ -14,3 +14,7 @@ variable "domain" {
   type        = string
   description = "The domain (must have an associated Route53 Zone)"
 }
+variable "platform_domains" {
+  type    = map(string)
+  default = {}
+}
