@@ -30,15 +30,14 @@ module "domain" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.15 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.33.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0, < 1.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.33.0 |
-| <a name="provider_aws.dns"></a> [aws.dns](#provider\_aws.dns) | 3.33.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.53.0 |
+| <a name="provider_aws.dns"></a> [aws.dns](#provider\_aws.dns) | 3.53.0 |
 
 ## Modules
 
@@ -48,19 +47,24 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [aws_acm_certificate.serverless_api_domain](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate) | resource |
+| [aws_acm_certificate_validation.validation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate_validation) | resource |
 | [aws_api_gateway_domain_name.domain](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/api_gateway_domain_name) | resource |
 | [aws_route53_record.record](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
+| [aws_route53_record.verification_record](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
+| [aws_route53_zone.zone](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/route53_zone) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_certificate_arn"></a> [certificate\_arn](#input\_certificate\_arn) | The certificate ARN provisioned for the domain | `string` | n/a | yes |
-| <a name="input_dns_domain_id"></a> [dns\_domain\_id](#input\_dns\_domain\_id) | The Route53 domain ID | `string` | n/a | yes |
-| <a name="input_dns_provider"></a> [dns\_provider](#input\_dns\_provider) | The DNS provider (Route53 currently only supported) | `string` | n/a | yes |
-| <a name="input_domain"></a> [domain](#input\_domain) | FQDN for the domain | `string` | n/a | yes |
+| <a name="input_domain"></a> [domain](#input\_domain) | The domain (must have an associated Route53 Zone) | `string` | n/a | yes |
+| <a name="input_subdomain"></a> [subdomain](#input\_subdomain) | The subdomain | `string` | n/a | yes |
+| <a name="input_subdomain_suffix"></a> [subdomain\_suffix](#input\_subdomain\_suffix) | The suffix to append to the subdomain (can be an empty string for no suffix) | `string` | n/a | yes |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_domain"></a> [domain](#output\_domain) | The complete FQDN for API Gateway |
 <!-- END_TF_DOCS -->
