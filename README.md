@@ -40,7 +40,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_domain"></a> [domain](#input\_domain) | The domain (must have an associated Route53 Zone) | `string` | n/a | yes |
-| <a name="input_platform_domains"></a> [platform\_domains](#input\_platform\_domains) | n/a | `map(string)` | `{}` | no |
+| <a name="input_platform_domains"></a> [platform\_domains](#input\_platform\_domains) | Any map of existing platform domains that have been provisioned (see output.platform\_domains) | `map(string)` | `{}` | no |
 | <a name="input_stage"></a> [stage](#input\_stage) | The stage | `string` | n/a | yes |
 | <a name="input_subdomain"></a> [subdomain](#input\_subdomain) | The subdomain | `string` | n/a | yes |
 | <a name="input_subdomain_suffix"></a> [subdomain\_suffix](#input\_subdomain\_suffix) | The (optional) suffix to append to the subdomain | `string` | n/a | yes |
