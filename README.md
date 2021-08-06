@@ -40,12 +40,16 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_domain"></a> [domain](#input\_domain) | The domain (must have an associated Route53 Zone) | `string` | n/a | yes |
+| <a name="input_stage"></a> [stage](#input\_stage) | The stage | `string` | n/a | yes |
 | <a name="input_subdomain"></a> [subdomain](#input\_subdomain) | The subdomain | `string` | n/a | yes |
-| <a name="input_subdomain_suffix"></a> [subdomain\_suffix](#input\_subdomain\_suffix) | The suffix to append to the subdomain (can be an empty string for no suffix) | `string` | n/a | yes |
+| <a name="input_subdomain_suffix"></a> [subdomain\_suffix](#input\_subdomain\_suffix) | The (optional) suffix to append to the subdomain | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
 | <a name="output_domain"></a> [domain](#output\_domain) | The complete FQDN for API Gateway |
+| <a name="output_stage"></a> [stage](#output\_stage) | Re-output of var.stage |
+| <a name="output_subdomain"></a> [subdomain](#output\_subdomain) | Re-output of var.subdomain |
+| <a name="output_subdomain_suffix"></a> [subdomain\_suffix](#output\_subdomain\_suffix) | Re-output of var.subdomain\_suffix |
 <!-- END_TF_DOCS -->
