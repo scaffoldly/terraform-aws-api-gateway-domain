@@ -7,7 +7,7 @@ variable "subdomain" {
   description = "The subdomain"
 }
 variable "subdomain_suffix" {
-  type        = optional(string)
+  type        = string
   description = "The (optional) suffix to append to the subdomain"
 }
 variable "domain" {

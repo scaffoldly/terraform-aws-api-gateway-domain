@@ -11,6 +11,6 @@ output "subdomain" {
   description = "Re-output of var.subdomain"
 }
 output "subdomain_suffix" {
-  value       = local.subdomain_suffix
-  description = "Re-output of var.subdomain_suffix, or an empty string if it was null"
+  value       = var.subdomain_suffix
+  description = "Re-output of var.subdomain_suffix"
 }
