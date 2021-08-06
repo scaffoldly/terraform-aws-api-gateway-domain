@@ -15,6 +15,7 @@ variable "domain" {
   description = "The domain (must have an associated Route53 Zone)"
 }
 variable "platform_domains" {
-  type    = map(string)
-  default = {}
+  type        = map(string)
+  default     = {}
+  description = "Any map of existing platform domains that have been provisioned (see output.platform_domains)"
 }
