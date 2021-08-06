@@ -6,25 +6,6 @@
 
 Given an ACM Certificate ARN and a domain, create a domain in API Gateway
 
-## Usage
-
-```hcl
-module "domain" {
-  source   = "scaffoldly/aws/api-gateway-domain"
-
-  for_each = var.stage_domains
-
-  dns_provider    = lookup(each.value, "dns_provider", "unknown-dns-provider")
-  dns_domain_id   = lookup(each.value, "dns_domain_id", "unknown-dns-domain-id")
-  domain          = lookup(each.value, "serverless_api_domain", "unknown-domain")
-  certificate_arn = lookup(each.value, "certificate_arn", "unknown-arn")
-
-  providers = {
-    aws.dns = aws.dns
-  }
-}
-```
-
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 

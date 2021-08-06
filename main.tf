@@ -7,7 +7,7 @@ data "aws_route53_zone" "zone" {
   provider = aws.dns
 }
 
-resource "aws_acm_certificate" "serverless_api_domain" {
+resource "aws_acm_certificate" "certificate" {
   domain_name       = local.domain
   validation_method = "DNS"
 
@@ -22,7 +22,7 @@ resource "aws_acm_certificate" "serverless_api_domain" {
 
 resource "aws_route53_record" "verification_record" {
   for_each = {
-    for dvo in aws_acm_certificate.serverless_api_domain.domain_validation_options : dvo.domain_name => {
+    for dvo in aws_acm_certificate.certificate.domain_validation_options : dvo.domain_name => {
       name   = dvo.resource_record_name
       record = dvo.resource_record_value
       type   = dvo.resource_record_type
@@ -41,13 +41,13 @@ resource "aws_route53_record" "verification_record" {
 }
 
 resource "aws_acm_certificate_validation" "validation" {
-  certificate_arn         = aws_acm_certificate.serverless_api_domain.arn
+  certificate_arn         = aws_acm_certificate.certificate.arn
   validation_record_fqdns = values(aws_route53_record.verification_record)[*].fqdn
 }
 
 resource "aws_api_gateway_domain_name" "domain" {
   security_policy = "TLS_1_2"
-  certificate_arn = aws_acm_certificate.serverless_api_domain.arn
+  certificate_arn = aws_acm_certificate.certificate.arn
   domain_name     = local.domain
 }
 
