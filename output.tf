@@ -18,7 +18,3 @@ output "api_gateway_domain" {
   value       = local.domain
   description = "The complete FQDN for API Gateway"
 }
-output "platform_domains" {
-  value       = local.platform_domains
-  description = "A merged map (with var.platform_domains) of the domains managed in this stage"
-}
