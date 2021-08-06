@@ -1,6 +1,6 @@
 output "domain" {
-  value       = local.domain
-  description = "The complete FQDN for API Gateway"
+  value       = var.domain
+  description = "Re-output of var.domain"
 }
 output "stage" {
   value       = var.stage
@@ -13,4 +13,8 @@ output "subdomain" {
 output "subdomain_suffix" {
   value       = var.subdomain_suffix
   description = "Re-output of var.subdomain_suffix"
+}
+output "api_gateway_domain" {
+  value       = local.domain
+  description = "The complete FQDN for API Gateway"
 }
