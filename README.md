@@ -40,7 +40,6 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_domain"></a> [domain](#input\_domain) | The domain (must have an associated Route53 Zone) | `string` | n/a | yes |
-| <a name="input_platform_domains"></a> [platform\_domains](#input\_platform\_domains) | Any map of existing platform domains that have been provisioned (see output.platform\_domains) | `map(string)` | `{}` | no |
 | <a name="input_stage"></a> [stage](#input\_stage) | The stage | `string` | n/a | yes |
 | <a name="input_subdomain"></a> [subdomain](#input\_subdomain) | The subdomain | `string` | n/a | yes |
 | <a name="input_subdomain_suffix"></a> [subdomain\_suffix](#input\_subdomain\_suffix) | The (optional) suffix to append to the subdomain | `string` | n/a | yes |
@@ -51,7 +50,6 @@ No modules.
 |------|-------------|
 | <a name="output_api_gateway_domain"></a> [api\_gateway\_domain](#output\_api\_gateway\_domain) | The complete FQDN for API Gateway |
 | <a name="output_domain"></a> [domain](#output\_domain) | Re-output of var.domain |
-| <a name="output_platform_domains"></a> [platform\_domains](#output\_platform\_domains) | A merged map (with var.platform\_domains) of the domains managed in this stage |
 | <a name="output_stage"></a> [stage](#output\_stage) | Re-output of var.stage |
 | <a name="output_subdomain"></a> [subdomain](#output\_subdomain) | Re-output of var.subdomain |
 | <a name="output_subdomain_suffix"></a> [subdomain\_suffix](#output\_subdomain\_suffix) | Re-output of var.subdomain\_suffix |
