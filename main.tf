@@ -49,6 +49,10 @@ resource "aws_api_gateway_domain_name" "domain" {
   security_policy = "TLS_1_2"
   certificate_arn = aws_acm_certificate.certificate.arn
   domain_name     = local.domain
+
+  depends_on = [
+    aws_acm_certificate_validation.validation
+  ]
 }
 
 resource "aws_route53_record" "record" {
