@@ -53,4 +53,5 @@ No modules.
 | <a name="output_stage"></a> [stage](#output\_stage) | Re-output of var.stage |
 | <a name="output_subdomain"></a> [subdomain](#output\_subdomain) | Re-output of var.subdomain |
 | <a name="output_subdomain_suffix"></a> [subdomain\_suffix](#output\_subdomain\_suffix) | Re-output of var.subdomain\_suffix |
+| <a name="output_zone_id"></a> [zone\_id](#output\_zone\_id) | The Zone ID for this stage |
 <!-- END_TF_DOCS -->
