@@ -18,3 +18,7 @@ output "api_gateway_domain" {
   value       = local.domain
   description = "The complete FQDN for API Gateway"
 }
+output "zone_id" {
+  value       = data.aws_route53_zone.zone.zone_id
+  description = "The Zone ID for this stage"
+}
