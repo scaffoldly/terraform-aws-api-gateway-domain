@@ -35,7 +35,7 @@ resource "aws_route53_record" "verification_record" {
   type    = each.value.type
   zone_id = data.aws_route53_zone.zone.zone_id
 
-  allow_overwrite = true # Dirty hack to allow wildcard certs to not collide
+  allow_overwrite = true
 
   provider = aws.dns
 }
@@ -62,6 +62,8 @@ resource "aws_route53_record" "record" {
   ttl     = "300"
 
   records = [aws_api_gateway_domain_name.domain.cloudfront_domain_name]
+
+  allow_overwrite = true
 
   provider = aws.dns
 }
