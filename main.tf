@@ -56,7 +56,7 @@ resource "aws_api_gateway_domain_name" "domain" {
 }
 
 resource "aws_route53_record" "record" {
-  name    = aws_api_gateway_domain_name.domain.domain_name
+  name    = local.domain
   type    = "CNAME"
   zone_id = data.aws_route53_zone.zone.zone_id
   ttl     = "300"
