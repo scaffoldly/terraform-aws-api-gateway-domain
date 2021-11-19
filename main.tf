@@ -57,7 +57,7 @@ resource "aws_api_gateway_domain_name" "domain" {
 }
 
 resource "aws_apigatewayv2_domain_name" "ws_domain" {
-  count = var.websockets ? 1 : 0
+  count = var.websocket ? 1 : 0
 
   domain_name = local.websocket_domain
 
@@ -86,7 +86,7 @@ resource "aws_route53_record" "record" {
 }
 
 resource "aws_route53_record" "record_cname" {
-  count = var.websockets ? 1 : 0
+  count = var.websocket ? 1 : 0
 
   name    = local.websocket_domain
   type    = "CNAME"
