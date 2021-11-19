@@ -19,11 +19,11 @@ output "api_gateway_domain" {
   description = "The complete FQDN for API Gateway"
 }
 output "api_gateway_websocket_domain" {
-  value       = var.websockets ? local.websocket_domain : null
+  value       = var.websocket ? local.websocket_domain : null
   description = "The complete FQDN for API Gateway Websockets"
 }
 output "api_gateway_websocket_domain_id" {
-  value       = var.websockets ? aws_apigatewayv2_domain_name.ws_domain[0].id : null
+  value       = var.websocket ? aws_apigatewayv2_domain_name.ws_domain[0].id : null
   description = "The domain ID for API Gateway Websockets"
 }
 output "zone_id" {
