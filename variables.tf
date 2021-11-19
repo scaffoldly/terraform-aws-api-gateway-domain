@@ -15,7 +15,7 @@ variable "domain" {
   description = "The domain (must have an associated Route53 Zone)"
 }
 
-variable "websockets" {
+variable "websocket" {
   type        = bool
   description = "Enable a domain for websockets"
   default     = false
