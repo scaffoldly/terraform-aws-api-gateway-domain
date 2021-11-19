@@ -45,7 +45,7 @@ No modules.
 | <a name="input_stage"></a> [stage](#input\_stage) | The stage | `string` | n/a | yes |
 | <a name="input_subdomain"></a> [subdomain](#input\_subdomain) | The subdomain | `string` | n/a | yes |
 | <a name="input_subdomain_suffix"></a> [subdomain\_suffix](#input\_subdomain\_suffix) | The (optional) suffix to append to the subdomain | `string` | n/a | yes |
-| <a name="input_websockets"></a> [websockets](#input\_websockets) | Enable a domain for websockets | `bool` | `false` | no |
+| <a name="input_websocket"></a> [websocket](#input\_websocket) | Enable a domain for websockets | `bool` | `false` | no |
 
 ## Outputs
 
