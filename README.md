@@ -31,7 +31,9 @@ No modules.
 | [aws_acm_certificate.certificate](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate) | resource |
 | [aws_acm_certificate_validation.validation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate_validation) | resource |
 | [aws_api_gateway_domain_name.domain](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/api_gateway_domain_name) | resource |
+| [aws_apigatewayv2_domain_name.ws_domain](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/apigatewayv2_domain_name) | resource |
 | [aws_route53_record.record](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
+| [aws_route53_record.record_cname](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
 | [aws_route53_record.verification_record](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
 | [aws_route53_zone.zone](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/route53_zone) | data source |
 
@@ -43,12 +45,15 @@ No modules.
 | <a name="input_stage"></a> [stage](#input\_stage) | The stage | `string` | n/a | yes |
 | <a name="input_subdomain"></a> [subdomain](#input\_subdomain) | The subdomain | `string` | n/a | yes |
 | <a name="input_subdomain_suffix"></a> [subdomain\_suffix](#input\_subdomain\_suffix) | The (optional) suffix to append to the subdomain | `string` | n/a | yes |
+| <a name="input_websockets"></a> [websockets](#input\_websockets) | Enable a domain for websockets | `bool` | `false` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
 | <a name="output_api_gateway_domain"></a> [api\_gateway\_domain](#output\_api\_gateway\_domain) | The complete FQDN for API Gateway |
+| <a name="output_api_gateway_websocket_domain"></a> [api\_gateway\_websocket\_domain](#output\_api\_gateway\_websocket\_domain) | The complete FQDN for API Gateway Websockets |
+| <a name="output_api_gateway_websocket_domain_id"></a> [api\_gateway\_websocket\_domain\_id](#output\_api\_gateway\_websocket\_domain\_id) | The domain ID for API Gateway Websockets |
 | <a name="output_domain"></a> [domain](#output\_domain) | Re-output of var.domain |
 | <a name="output_stage"></a> [stage](#output\_stage) | Re-output of var.stage |
 | <a name="output_subdomain"></a> [subdomain](#output\_subdomain) | Re-output of var.subdomain |
