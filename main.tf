@@ -9,8 +9,9 @@ data "aws_route53_zone" "zone" {
 }
 
 resource "aws_acm_certificate" "certificate" {
-  domain_name       = local.domain
-  validation_method = "DNS"
+  domain_name               = local.domain
+  subject_alternative_names = var.websocket ? [local.websocket_domain] : null
+  validation_method         = "DNS"
 
   options {
     certificate_transparency_logging_preference = "ENABLED"
