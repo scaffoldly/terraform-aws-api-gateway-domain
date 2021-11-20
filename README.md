@@ -52,6 +52,7 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_api_gateway_domain"></a> [api\_gateway\_domain](#output\_api\_gateway\_domain) | The complete FQDN for API Gateway |
+| <a name="output_api_gateway_websocket"></a> [api\_gateway\_websocket](#output\_api\_gateway\_websocket) | Re-output of var.websocket |
 | <a name="output_api_gateway_websocket_domain"></a> [api\_gateway\_websocket\_domain](#output\_api\_gateway\_websocket\_domain) | The complete FQDN for API Gateway Websockets |
 | <a name="output_api_gateway_websocket_domain_id"></a> [api\_gateway\_websocket\_domain\_id](#output\_api\_gateway\_websocket\_domain\_id) | The domain ID for API Gateway Websockets |
 | <a name="output_domain"></a> [domain](#output\_domain) | Re-output of var.domain |
