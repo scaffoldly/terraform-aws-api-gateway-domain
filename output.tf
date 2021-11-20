@@ -18,6 +18,10 @@ output "api_gateway_domain" {
   value       = local.domain
   description = "The complete FQDN for API Gateway"
 }
+output "api_gateway_websocket" {
+  value       = var.websocket
+  description = "Re-output of var.websocket"
+}
 output "api_gateway_websocket_domain" {
   value       = var.websocket ? local.websocket_domain : null
   description = "The complete FQDN for API Gateway Websockets"
